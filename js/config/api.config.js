@@ -1,0 +1,1 @@
+export const API_URL = "https://epyq.bsite.net/api/";

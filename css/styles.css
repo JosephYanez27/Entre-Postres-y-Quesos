@@ -1,0 +1,135 @@
+/* =========================================================
+   1. BASE Y FUENTES (Manteniendo el blanco y elegancia)
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;500&display=swap');
+
+body.bg-light {
+    background-color: #ffffff !important; /* Blanco puro solicitado */
+    font-family: 'Poppins', sans-serif;
+    color: #4a331c;
+}
+
+/* =========================================================
+   2. TARJETAS DE PRODUCTOS Y ANIMACIONES
+   ========================================================= */
+#menu .producto {
+    background: #ffffff;
+    border: 1px solid #e0c9a3; /* Color madera suave */
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(184, 134, 69, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Animación de entrada suave */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 0.6s ease-out forwards;
+}
+
+#menu .producto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(184, 134, 69, 0.15);
+    border-color: #b88645; /* Dorado */
+}
+
+@keyframes aparecer {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   3. ESTILIZADO DE LAS OPCIONES (CHIPS / ETIQUETAS)
+   ========================================================= */
+#menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Responsivo: saltan de línea si no caben */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#menu li {
+    background: #fdfbf7;
+    border: 1px solid #e0c9a3;
+    padding: 6px 16px;
+    border-radius: 50px; /* Forma de cápsula */
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+#menu li:hover {
+    background: #b88645;
+    color: white;
+    border-color: #b88645;
+}
+
+/* =========================================================
+   4. MAGIA DE EMOJIS POR CSS (Basado en tu JSON)
+   ========================================================= */
+
+/* Usamos :has() para detectar el texto dentro de la lista */
+
+/* Gelatinas */
+#menu li:has(:contains("Fresa"))::before { content: "🍓"; }
+#menu li:has(:contains("Mango"))::before { content: "🥭"; }
+#menu li:has(:contains("Rompope"))::before { content: "🍶"; }
+#menu li:has(:contains("Durazno"))::before { content: "🍑"; }
+
+/* Pasteles */
+#menu li:has(:contains("Chocolate"))::before { content: "🍫"; }
+#menu li:has(:contains("Vainilla"))::before { content: "🍦"; }
+#menu li:has(:contains("Zanahoria"))::before { content: "🥕"; }
+#menu li:has(:contains("Limon"))::before { content: "🍋"; }
+
+/* Pan */
+#menu li:has(:contains("Conchas"))::before { content: "🥯"; }
+#menu li:has(:contains("Croissant"))::before { content: "🥐"; }
+
+/* Licores */
+#menu li:has(:contains("Frutos Rojos"))::before { content: "🍒"; }
+#menu li:has(:contains("Café"))::before { content: "☕"; }
+#menu li:has(:contains("Pericón"))::before { content: "🌿"; }
+
+/* Salsas */
+#menu li:has(:contains("Macha"))::before { content: "🔥"; }
+#menu li:has(:contains("Chipotles"))::before { content: "🌶️"; }
+
+/* Tablas de Quesos */
+#menu li:has(:contains("personas"))::before { content: "👥"; }
+
+/* Categorías (Títulos h2) */
+#menu h2 {
+    font-family: 'Playfair Display', serif;
+    color: #b88645;
+    margin-top: 40px;
+    font-size: 2rem;
+    border-bottom: 2px solid #fdfbf7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Emojis para los títulos de categoría */
+#menu h2:has(:contains("Gelatinas"))::after { content: "🍮"; }
+#menu h2:has(:contains("Pasteles"))::after { content: "🍰"; }
+#menu h2:has(:contains("Pan"))::after { content: "🥐"; }
+#menu h2:has(:contains("Licores"))::after { content: "🍷"; }
+#menu h2:has(:contains("Salsas"))::after { content: "🌶️"; }
+#menu h2:has(:contains("Tablas"))::after { content: "🧀"; }
+
+/* =========================================================
+   5. RESPONSIVIDAD (Celulares)
+   ========================================================= */
+@media (max-width: 576px) {
+    #menu .producto {
+        padding: 15px;
+    }
+    #menu h2 {
+        font-size: 1.6rem;
+    }
+}
