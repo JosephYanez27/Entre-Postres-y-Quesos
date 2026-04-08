@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "entre-postres-y-quesos",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/Index.html" }
+  ]
+}
