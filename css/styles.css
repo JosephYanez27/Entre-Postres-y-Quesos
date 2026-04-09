@@ -1,8 +1,26 @@
+
+:root {
+    --color-oro: #b88645;
+}
+
+.titulo-principal {
+    color: var(--color-oro) !important;
+    font-family: 'Playfair Display', serif; /* La fuente elegante que importamos */
+    font-size: 2.5rem; /* Tamaño grande y legible */
+    font-weight: 700;
+    margin-top: 10px;
+    letter-spacing: -1px;
+}
 /* =========================================================
    1. BASE Y FUENTES (Manteniendo el blanco y elegancia)
    ========================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;500&display=swap');
 
+/* --- ANIMACIÓN DE CARGA DEL HEADER --- */
+header {
+    border-bottom: 1px solid var(--color-madera);
+    animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
 body.bg-light {
     background-color: #ffffff !important; /* Blanco puro solicitado */
     font-family: 'Poppins', sans-serif;
@@ -68,39 +86,7 @@ body.bg-light {
     border-color: #b88645;
 }
 
-/* =========================================================
-   4. MAGIA DE EMOJIS POR CSS (Basado en tu JSON)
-   ========================================================= */
 
-/* Usamos :has() para detectar el texto dentro de la lista */
-
-/* Gelatinas */
-#menu li:has(:contains("Fresa"))::before { content: "🍓"; }
-#menu li:has(:contains("Mango"))::before { content: "🥭"; }
-#menu li:has(:contains("Rompope"))::before { content: "🍶"; }
-#menu li:has(:contains("Durazno"))::before { content: "🍑"; }
-
-/* Pasteles */
-#menu li:has(:contains("Chocolate"))::before { content: "🍫"; }
-#menu li:has(:contains("Vainilla"))::before { content: "🍦"; }
-#menu li:has(:contains("Zanahoria"))::before { content: "🥕"; }
-#menu li:has(:contains("Limon"))::before { content: "🍋"; }
-
-/* Pan */
-#menu li:has(:contains("Conchas"))::before { content: "🥯"; }
-#menu li:has(:contains("Croissant"))::before { content: "🥐"; }
-
-/* Licores */
-#menu li:has(:contains("Frutos Rojos"))::before { content: "🍒"; }
-#menu li:has(:contains("Café"))::before { content: "☕"; }
-#menu li:has(:contains("Pericón"))::before { content: "🌿"; }
-
-/* Salsas */
-#menu li:has(:contains("Macha"))::before { content: "🔥"; }
-#menu li:has(:contains("Chipotles"))::before { content: "🌶️"; }
-
-/* Tablas de Quesos */
-#menu li:has(:contains("personas"))::before { content: "👥"; }
 
 /* Categorías (Títulos h2) */
 #menu h2 {
@@ -114,13 +100,9 @@ body.bg-light {
     gap: 10px;
 }
 
-/* Emojis para los títulos de categoría */
-#menu h2:has(:contains("Gelatinas"))::after { content: "🍮"; }
-#menu h2:has(:contains("Pasteles"))::after { content: "🍰"; }
-#menu h2:has(:contains("Pan"))::after { content: "🥐"; }
-#menu h2:has(:contains("Licores"))::after { content: "🍷"; }
-#menu h2:has(:contains("Salsas"))::after { content: "🌶️"; }
-#menu h2:has(:contains("Tablas"))::after { content: "🧀"; }
+
+
+
 
 /* =========================================================
    5. RESPONSIVIDAD (Celulares)
@@ -132,4 +114,85 @@ body.bg-light {
     #menu h2 {
         font-size: 1.6rem;
     }
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+}
+.img-producto {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+
+    object-fit: contain; /* 🔥 clave */
+    object-position: center;
+
+    margin: 0 auto;
+    display: block;
+
+    background-color: #f5f5f5; /* 👈 opcional: relleno bonito */
+    border-radius: 12px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* 🔥 importante */
+    background-color: #f5f5f5; /* relleno elegante */
+}
+
+/* Limitar tamaño del card */
+.producto {
+    max-width: 400px;
+    margin: auto;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #556B2F; /* verde olivo */
+    border-radius: 50%;
+    padding: 10px;
+}
+.titulo-container {
+    max-width: 400px; /* igual que .producto */
+    margin: 0 auto;   /* centra el bloque */
+    text-align: center;
+}
+
+/* Para que el título destaque sobre el azul (puedes usar blanco o tu color oro) */
+header .titulo-principal {
+    color: var(--color-oro) !important; /* O cámbialo a #ffffff si lo prefieres blanco */
+}
+.titulo-pedido {
+    color: #bfa046; /* dorado */
+    font-weight: 600;
+}
+
+.btn-red {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 20px;
+    border-radius: 30px;
+
+    border: 1px solid #bfa046;
+    color: #bfa046;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.btn-red:hover {
+    background-color: #bfa046;
+    color: white;
+}
+
+.btn-red i {
+    font-size: 1.2rem;
 }
