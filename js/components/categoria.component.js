@@ -51,7 +51,7 @@ const imagenesPorTipo = {
     "tabla": [
         "/assets/productos/Tabla1sf.png",
         "/assets/productos/Tabla2sf.png",
-        "/assets/productos/Tabla3sf.png"
+        "/assets/productos/tabla3sf.png"
     ],
     "gelatina": [
         "/assets/productos/gel1sinf.png",
